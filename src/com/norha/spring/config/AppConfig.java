@@ -22,6 +22,7 @@ public class AppConfig {
 		return dataSource;
 	}
 	
+	@Bean(name = "DAOBean")
 	public AppDAOImpl AppDAO() {
 		return new AppDAOImpl(getDataSource());
 	}
