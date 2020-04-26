@@ -1,6 +1,5 @@
 package com.norha.spring;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,14 +17,12 @@ public class HomeController {
 	@RequestMapping("/")
 	public ModelAndView getHome() {
 		ModelAndView modelAndView = new ModelAndView("index");
-		List <User> listUsers = new ArrayList<User>();
- 		ClassPathXmlApplicationContext applicationContext = 
-				new ClassPathXmlApplicationContext("/com/norha/spring/DAO/SpringDAO-config.xml");
-		
-		AppDAOImpl dao = applicationContext.getBean("DAOBean",AppDAOImpl.class);
+		List<User> listUsers = new ArrayList<User>();
+		ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext(
+				"/com/norha/spring/DAO/SpringDAO-config.xml");
+		AppDAOImpl dao = applicationContext.getBean("DAOBean", AppDAOImpl.class);
 		listUsers = dao.listUsers();
-		System.out.println(listUsers);
-		modelAndView.addObject("Users",listUsers);
+		modelAndView.addObject("users", listUsers);
 		applicationContext.close();
 		return modelAndView;
 	}
