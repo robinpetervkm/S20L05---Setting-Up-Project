@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -27,6 +28,16 @@ public class HomeController {
 		modelAndView.addObject("users", listUsers);
 		context.close();
 		return modelAndView;
+	}
+	
+	@RequestMapping("/addUser")
+	public String addUser(Model model,User user) {
+		model.addAttribute("User", user);
+		
+		if (user.getName() == null && user.getEmail() == null)
+		return "addUser";
+		else
+		return "forward:/";
 	}
 
 }
