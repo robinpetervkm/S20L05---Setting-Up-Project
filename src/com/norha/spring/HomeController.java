@@ -23,7 +23,7 @@ public class HomeController {
 
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 		AppDAOImpl dao = context.getBean("DAOBean", AppDAOImpl.class);
-		listUsers = dao.listUsers();
+		listUsers = dao.listUsers(1);
 		modelAndView.addObject("users", listUsers);
 		context.close();
 		return modelAndView;
@@ -44,5 +44,4 @@ public class HomeController {
 			return "forward:/";
 		}
 	}
-
 }
