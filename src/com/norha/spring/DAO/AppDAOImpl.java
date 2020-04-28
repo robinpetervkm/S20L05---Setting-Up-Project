@@ -46,4 +46,31 @@ public class AppDAOImpl implements AppDAO {
 		}
 		return listUsers;
 	}
+
+	public void addUser(User user) {
+		String sql = "INSERT INTO user "+
+						"(name,email) VALUES (?,?)";
+		
+		Connection con = null;
+		try {
+			con = dataSource.getConnection();
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, user.getName());
+			ps.setString(2, user.getEmail());
+			System.out.println(ps.execute());
+			ps.close();
+			
+		}catch(SQLException e ) {
+			e.printStackTrace();
+		}finally {
+			if(con!=null) {
+				try {
+					con.close();
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+	}
 }

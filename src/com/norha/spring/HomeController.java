@@ -20,24 +20,29 @@ public class HomeController {
 	public ModelAndView getHome() {
 		ModelAndView modelAndView = new ModelAndView("index");
 		List<User> listUsers = new ArrayList<User>();
-		
-		AnnotationConfigApplicationContext context = 
-				new AnnotationConfigApplicationContext(AppConfig.class);
+
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 		AppDAOImpl dao = context.getBean("DAOBean", AppDAOImpl.class);
 		listUsers = dao.listUsers();
 		modelAndView.addObject("users", listUsers);
 		context.close();
 		return modelAndView;
 	}
-	
+
 	@RequestMapping("/addUser")
-	public String addUser(Model model,User user) {
+	public String addUser(Model model, User user) {
 		model.addAttribute("User", user);
-		
+
 		if (user.getName() == null && user.getEmail() == null)
-		return "addUser";
-		else
-		return "forward:/";
+			return "addUser";
+		else {
+			AnnotationConfigApplicationContext context = 
+					new AnnotationConfigApplicationContext(AppConfig.class);
+			AppDAOImpl dao = context.getBean("DAOBean", AppDAOImpl.class);
+			dao.addUser(user);
+			context.close();
+			return "forward:/";
+		}
 	}
 
 }
