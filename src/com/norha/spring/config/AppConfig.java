@@ -11,7 +11,7 @@ import com.norha.spring.DAO.AppDAOImpl;
 @Configuration
 public class AppConfig {
 
-	@Bean
+	@Bean(name = "dataSource")
 	public DataSource getDataSource() {
 		DriverManagerDataSource dataSource = 
 				new DriverManagerDataSource();

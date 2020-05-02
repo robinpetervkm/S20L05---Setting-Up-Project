@@ -26,6 +26,5 @@
 	<mvc:annotation-driven></mvc:annotation-driven>
 	<mvc:resources location="/WEB-INF/template/" mapping="/files/**"></mvc:resources>
 
-	<bean id="passwordEncoder"
-        class="org.springframework.security.crypto.password.NoOpPasswordEncoder" factory-method="getInstance"/>
+	
 </beans>
