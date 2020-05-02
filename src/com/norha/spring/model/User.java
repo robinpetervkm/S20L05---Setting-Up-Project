@@ -4,16 +4,25 @@ public class User {
 	int userID;
 	String name;
 	String email;
+	String password;
 	
 	public User() {
 	}
 
 	public User(int userID, String name, String email) {
+		super();
 		this.userID = userID;
 		this.name = name;
 		this.email = email;
 	}
-	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	public int getUserID() {
 		return userID;
 	}
@@ -35,7 +44,8 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userID=" + userID + ", name=" + name + ", email=" + email + "]";
+		return "User [userID=" + userID + ", name=" + name + ", email=" + email +  "]";
 	}
 
+	
 }

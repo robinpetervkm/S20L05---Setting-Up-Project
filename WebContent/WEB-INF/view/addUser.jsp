@@ -21,6 +21,10 @@
 						path="email" cssStyle="color:red"></form:errors></td>
 			</tr>
 			<tr>
+				<td>Password : <form:input path="password" type="password"/> <form:errors
+						path="email" cssStyle="color:red"></form:errors></td>
+			</tr>
+			<tr>
 				<td><input type="submit" value="Submit"></td>
 			</tr>
 		</form:form>
