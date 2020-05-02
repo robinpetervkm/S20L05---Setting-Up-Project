@@ -22,6 +22,8 @@
 	<security:http use-expressions="true">
 		<security:intercept-url pattern="/"
 			access="permitAll" />
+		<security:intercept-url pattern="/files/**"
+			access="permitAll" />
 		<security:intercept-url pattern="/addUser"
 			access="isAuthenticated()" />
 		<security:intercept-url pattern="/**"
