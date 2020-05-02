@@ -38,6 +38,10 @@
 					type="password" id="password" name="password" class="form-control"
 					placeholder="Password" required>
 			</p>
+			<p>
+				<label for="remeber-me" >RemeberMe</label> <input
+					type="checkbox" id="remeber-me" name="remeber-me">
+			</p>
 			<input name="${_csrf.parameterName}" type="hidden"
 				value="${_csrf.token }" />
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
