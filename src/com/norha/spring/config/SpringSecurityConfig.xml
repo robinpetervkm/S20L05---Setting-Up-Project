@@ -20,6 +20,8 @@
 	
 	
 	<security:http use-expressions="true">
+		<security:intercept-url pattern="/login"
+			access="permitAll" />
 		<security:intercept-url pattern="/"
 			access="permitAll" />
 		<security:intercept-url pattern="/files/**"
@@ -29,7 +31,8 @@
 		<security:intercept-url pattern="/**"
 			access="denyAll" />
 	
-		<security:form-login />
+		<security:form-login login-page="/login"
+			authentication-failure-url="/login?error" />
 	</security:http>
 	
 </beans>

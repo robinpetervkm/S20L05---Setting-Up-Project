@@ -44,5 +44,10 @@ public class HomeController {
 			return "forward:/";
 		}
 	}
+	@RequestMapping("/login")
+	public ModelAndView login() {
+		ModelAndView modelAndView = new ModelAndView("login");
+		return modelAndView;
+	}
 
 }
