@@ -40,7 +40,7 @@
 			</p>
 			<p>
 				<label for="remeber-me" >RemeberMe</label> <input
-					type="checkbox" id="remeber-me" name="remeber-me">
+					type="checkbox" id="remember-me" name="remember-me">
 			</p>
 			<input name="${_csrf.parameterName}" type="hidden"
 				value="${_csrf.token }" />

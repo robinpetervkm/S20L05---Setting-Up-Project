@@ -28,7 +28,7 @@
 	
 		<security:form-login login-page="/login"
 			authentication-failure-url="/login?error" />
-		<security:remember-me remember-me-parameter="remeber-me"
-			key="randomKey" data-source-ref="dataSource" />
+		<!-- <security:remember-me remember-me-parameter="remember-me"
+			key="randomKey" data-source-ref="dataSource" /> -->
 	</security:http>
 </beans>
