@@ -49,5 +49,10 @@ public class HomeController {
 		ModelAndView modelAndView = new ModelAndView("login");
 		return modelAndView;
 	}
+	@RequestMapping("/logout")
+	public ModelAndView logout() {
+		ModelAndView modelAndView = new ModelAndView("logout");
+		return modelAndView;
+	}
 
 }
