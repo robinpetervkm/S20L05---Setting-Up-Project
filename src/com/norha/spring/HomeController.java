@@ -59,5 +59,10 @@ public class HomeController {
 		ModelAndView modelAndView = new ModelAndView("admin");
 		return modelAndView;
 	}
+	@RequestMapping("/403")
+	public ModelAndView page403() {
+		ModelAndView modelAndView = new ModelAndView("403");
+		return modelAndView;
+	}
 
 }

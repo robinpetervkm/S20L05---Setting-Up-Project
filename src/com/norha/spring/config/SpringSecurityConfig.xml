@@ -20,6 +20,8 @@
 			access="permitAll" />
 		<security:intercept-url pattern="/"
 			access="permitAll" />
+		<security:intercept-url pattern="/403"
+			access="permitAll" />
 			
 		<security:intercept-url pattern="/admin"
 			access="hasRole('ADMIN')" />
@@ -36,5 +38,8 @@
 			
 		<security:logout logout-success-url="/"
 			logout-url="/" invalidate-session="true" />
+
+		<security:access-denied-handler error-page="/403" />
+		
 	</security:http>
 </beans>
