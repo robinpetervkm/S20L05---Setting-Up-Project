@@ -49,5 +49,15 @@ public class HomeController {
 		ModelAndView modelAndView = new ModelAndView("login");
 		return modelAndView;
 	}
+	@RequestMapping("/user")
+	public ModelAndView user() {
+		ModelAndView modelAndView = new ModelAndView("user");
+		return modelAndView;
+	}
+	@RequestMapping("/admin")
+	public ModelAndView admin() {
+		ModelAndView modelAndView = new ModelAndView("admin");
+		return modelAndView;
+	}
 
 }
