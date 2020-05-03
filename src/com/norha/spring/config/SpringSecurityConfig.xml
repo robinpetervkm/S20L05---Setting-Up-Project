@@ -16,8 +16,7 @@
 	<security:http use-expressions="true">
 		<security:intercept-url pattern="/login"
 			access="permitAll" />
-		<security:intercept-url pattern="/logout"
-			access="permitAll" />
+
 		<security:intercept-url pattern="/"
 			access="permitAll" />
 		<security:intercept-url pattern="/files/**"
@@ -30,7 +29,7 @@
 		<security:form-login login-page="/login"
 			authentication-failure-url="/login?error" />
 			
-		<security:logout logout-success-url="/logout"
-			logout-url="/logout" invalidate-session="true" />
+		<security:logout logout-success-url="/"
+			logout-url="/" invalidate-session="true" />
 	</security:http>
 </beans>

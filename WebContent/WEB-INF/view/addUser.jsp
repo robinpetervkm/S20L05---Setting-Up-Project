@@ -31,7 +31,7 @@
 		</form:form>
 		<tr>
 			<td>
-				<c:url var="logoutUrl" value="/logout"/>
+				<c:url var="logoutUrl" value="/"/>
 				<form action="${logoutUrl}" method="post" >
 					<input  type="submit" value="Logout" />
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token } "/>
