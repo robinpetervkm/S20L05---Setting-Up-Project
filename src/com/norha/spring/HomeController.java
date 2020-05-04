@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -54,6 +55,7 @@ public class HomeController {
 		ModelAndView modelAndView = new ModelAndView("user");
 		return modelAndView;
 	}
+	@Secured("ROLE_ADMIN")
 	@RequestMapping("/admin")
 	public ModelAndView admin() {
 		ModelAndView modelAndView = new ModelAndView("admin");
