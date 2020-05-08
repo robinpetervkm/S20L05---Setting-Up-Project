@@ -10,6 +10,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import com.norha.spring.model.User;
+import com.norha.spring.service.PasswordEncodingService;
 
 public class AppDAOImpl implements AppDAO {
 	
@@ -57,7 +58,7 @@ public class AppDAOImpl implements AppDAO {
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, user.getName());
 			ps.setString(2, user.getEmail());
-			ps.setString(3, user.getPassword());
+			ps.setString(3, new PasswordEncodingService().passwordEncoder(user.getPassword()));
 			ps.setInt(4, 1);
 			System.out.println(ps.execute());
 			ps.close();
